@@ -24,15 +24,38 @@ return {
   -- { "max397574/better-escape.nvim", enabled = false },
   --
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   config = function(plugin, opts)
-  --     require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
-  --     -- add more custom luasnip configuration such as filetype extend or custom snippets
-  --     local luasnip = require "luasnip"
-  --     luasnip.filetype_extend("javascript", { "javascriptreact" })
-  --   end,
-  -- },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = function(_, opts)
+      -- Add custom neo-tree keybindings
+      vim.keymap.set("n", "<leader>fe", "<cmd>Neotree reveal<cr>", { silent = true })
+
+      -- Override default neo-tree options
+      opts.filesystem.filtered_items = {
+        hide_dotfiles = false,
+        hide_gitignored = true,
+      }
+      opts.filesystem.follow_current_file = false
+      opts.window.width = 40
+
+      return opts
+    end,
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    config = function(plugin, opts)
+      require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+
+      -- Load my custom VS Code snippets
+      require("luasnip.loaders.from_vscode").lazy_load { paths = { "./lua/user/snippets" } }
+
+      -- This will expand the current item or jump to the next item within the snippet.
+      local luasnip = require "luasnip"
+      vim.keymap.set({ "i", "s" }, "<C-e>", function()
+        if luasnip.expand_or_jumpable() then luasnip.expand_or_jump() end
+      end, { silent = true })
+    end,
+  },
   -- {
   --   "windwp/nvim-autopairs",
   --   config = function(plugin, opts)

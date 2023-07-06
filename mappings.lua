@@ -21,6 +21,11 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
+  v = {
+    -- stay in indent mode
+    ["<"] = { "<gv", desc = "Indent left and keep selection" },
+    [">"] = { ">gv", desc = "Indent right and keep selection" },
+  },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,

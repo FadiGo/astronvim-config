@@ -1,0 +1,10 @@
+{
+  "Print filename": {
+    "prefix": "ff",
+    "body": ["${TM_FILENAME_BASE}"]
+  },
+  "React useState": {
+    "prefix": "rus",
+    "body": ["const [$1, set${1/(.*)/${1:/capitalize}/}] = React.useState($2)"]
+  },
+}

@@ -1,12 +1,27 @@
 return {
-  -- You can also add new plugins here as well:
-  -- Add plugins, the lazy syntax
-  -- "andweeb/presence.nvim",
-  -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "BufRead",
-  --   config = function()
-  --     require("lsp_signature").setup()
-  --   end,
-  -- },
+  -- Git commands inside vim
+  { "tpope/vim-fugitive", lazy = false },
+  { "tpope/vim-rhubarb", event = "User AstroGitFile" },
+
+  -- Delete/change/add parentheses/quotes/XML-tags/much more with ease
+  { "tpope/vim-surround", event = "User AstroFile" },
+
+  -- Smooth scrolling
+  {
+    "karb94/neoscroll.nvim",
+    event = "User AstroFile",
+    opts = {},
+  },
+
+  -- Highlight, list and search todo comments in your projects
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "User AstroFile",
+    cmd = { "TodoQuickFix" },
+    keys = {
+      { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope" },
+    },
+    opts = {},
+  },
 }

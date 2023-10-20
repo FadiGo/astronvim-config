@@ -14,7 +14,7 @@ return {
   { import = "astrocommunity.motion.mini-ai" },
 
   -- Splitting/joining blocks of code
-  { import = "astrocommunity.editing-support.treej" },
+  { import = "astrocommunity.editing-support.treesj" },
 
   -- editor rulers
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },

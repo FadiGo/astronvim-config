@@ -13,6 +13,15 @@ return {
     opts = {},
   },
 
+  -- Catppuccin theme
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = {
+      -- configuration options...
+    },
+  },
+
   -- Highlight, list and search todo comments in your projects
   {
     "folke/todo-comments.nvim",

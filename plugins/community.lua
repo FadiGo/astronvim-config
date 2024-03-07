@@ -8,7 +8,7 @@ return {
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
 
   -- autocompletion
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 
   -- Additional powerful text objects
   { import = "astrocommunity.motion.mini-ai" },

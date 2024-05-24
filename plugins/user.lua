@@ -13,13 +13,12 @@ return {
     opts = {},
   },
 
-  -- Catppuccin theme
+  -- Tokyonight theme
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    opts = {
-      -- configuration options...
-    },
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   },
 
   -- Highlight, list and search todo comments in your projects

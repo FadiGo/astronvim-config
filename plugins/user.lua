@@ -7,11 +7,11 @@ return {
   { "tpope/vim-surround", event = "User AstroFile" },
 
   -- Smooth scrolling
-  {
-    "karb94/neoscroll.nvim",
-    event = "User AstroFile",
-    opts = {},
-  },
+  -- {
+  --   "karb94/neoscroll.nvim",
+  --   event = "User AstroFile",
+  --   opts = {},
+  -- },
 
   -- Tokyonight theme
   {
